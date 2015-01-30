@@ -11,7 +11,7 @@ import org.scalatest.prop.Checkers
  */
 class EchoCheck extends FunSuite with Checkers {
 
-  val simpleEcho = new SimpleEcho
+/*  val simpleEcho = new SimpleEcho
 
   val doubleEcho = new DoubleEcho
 
@@ -25,5 +25,5 @@ class EchoCheck extends FunSuite with Checkers {
     check { (a: String) =>
       doubleEcho.echo(a) == a + " " + a
     }
-  }
+  }*/
 }

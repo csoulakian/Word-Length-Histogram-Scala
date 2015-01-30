@@ -10,7 +10,7 @@ import org.scalatest.FunSuite
  */
 class EchoTest extends FunSuite {
 
-  test("A simple echo should echo an empty argument") {
+/*  test("A simple echo should echo an empty argument") {
     assert((new SimpleEcho).echo("") == "")
   }
 
@@ -37,5 +37,5 @@ class EchoTest extends FunSuite {
     intercept[IndexOutOfBoundsException] {
       echos(1).echo("")
     }
-  }
+  }*/
 }

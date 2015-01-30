@@ -11,7 +11,7 @@ import Assert._
  */
 class EchoJUnit  {
 
-  @Test
+/*  @Test
   def testSimpleEmpty(): Unit = {
     assertEquals("", (new SimpleEcho).echo(""))
   }
@@ -47,5 +47,5 @@ class EchoJUnit  {
     } catch {
       case ex: IndexOutOfBoundsException => // all good
     }
-  }
+  }*/
 }

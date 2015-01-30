@@ -1,4 +1,4 @@
-package cs372s15p1.src.main.scala.common
+package cs372s15p1.scala.common
 
 /**
  * from processtree-scala

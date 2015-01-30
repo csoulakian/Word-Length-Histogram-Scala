@@ -1,4 +1,4 @@
-package cs372s15p1.src.main.scala.common
+package cs372s15p1.scala.common
 
 /**
  * from processtree-scala
@@ -11,19 +11,13 @@ import scala.math.max
 
 trait IO {
 
-  def parseLine(header: String): (String) => (Int, Int, String) = {
-    val cols = new java.util.StringTokenizer(header).toList
-    val iPid = cols indexOf "PID"
-    val iPpid = cols indexOf "PPID"
-    val iCmd = max(header indexOf "CMD", header indexOf "COMMAND")
-    require(iPid >= 0, "required header field PID missing!")
-    require(iPpid >= 0, "required header field PPID missing!")
-    require(iCmd > max(iPid, iPpid), "required header field CMD or COMMAND missing or not last!")
-    (line: String) => {
-      val sTok = new java.util.StringTokenizer(line)
-      val words = (0 to max(iPid, iPpid)).map(_ => sTok.nextToken())
-      (words(iPid).toInt, words(iPpid).toInt, line.substring(iCmd))
-    }
+  def countLetters(myWord : String): Int = {
+     // : (String) => Int = {
+
+
+    //(myWord: String) => myWord.length
+
+    myWord.length()
   }
 
   val IO_BUF_SIZE = 8192
