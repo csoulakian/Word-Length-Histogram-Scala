@@ -11,13 +11,8 @@ import scala.math.max
 
 trait IO {
 
-  def countLetters(myWord : String): Int = {
-     // : (String) => Int = {
-
-
-    //(myWord: String) => myWord.length
-
-    myWord.length()
+  def countLength(word: String): Int = {
+    word.length
   }
 
   val IO_BUF_SIZE = 8192
