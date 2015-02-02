@@ -8,20 +8,18 @@ object Main extends common.Main with Mutable
 
 trait Mutable extends common.StarBuilder {
 
-  import scala.collection.mutable.{ArrayBuffer, Buffer, HashMap}
+  import scala.collection.mutable.HashMap
 
-  val CHILD_LIST_SIZE = 16
-
-  override def buildStars(allWords: Iterator[Int]):
-  Map[Int, Int] = {
-    val treeMap = new HashMap[Int, Buffer[(Int, Int, String)]]
-    while (processes.hasNext) {
-      val tuple = processes.next()
-      val (pid, ppid, cmd) = tuple
-      if (! treeMap.contains(ppid)) {
-        treeMap += ((ppid, new ArrayBuffer[(Int, Int, String)](CHILD_LIST_SIZE)))
+  override def buildStars(allWords: Iterator[Int]): Map[Int, Int] = {
+    val treeMap = new HashMap[Int, Int]
+    while (allWords.hasNext) {
+      val wordLength = allWords.next()
+      if (! treeMap.contains(wordLength)) {
+        treeMap += (wordLength -> 1)
       }
-      treeMap(ppid) += tuple
+      else {
+        treeMap(wordLength) += 1
+      }
     }
     treeMap.toMap
   }

@@ -9,12 +9,12 @@ trait Main extends App with IO with StarBuilder {
 
      val allWords = words.map((s: String) => countLength(s))
 
-    val start = System.currentTimeMillis
-    val wordTree = buildStars(allWords)
-    val total = System.currentTimeMillis - start
+     val start = System.currentTimeMillis
+     val wordTree = buildStars(allWords)
+     val total = System.currentTimeMillis - start
 
-    printTree(wordTree)
-    println("processing time: " + total + " ms")
+     printTree(wordTree)
+     println("processing time: " + total + " ms")
   }
 
 }
