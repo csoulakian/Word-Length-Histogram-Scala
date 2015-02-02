@@ -7,7 +7,7 @@ import org.scalatest.Assertions._
 /**
  * Created by Chrissy on 1/29/2015.
  */
-class CountLettersTest extends FunSuite with Main {
+abstract class CountLettersTest extends FunSuite with Main {
 
   test("A 3 letter word should count 3") {
     assert (countLength("run") == 3)

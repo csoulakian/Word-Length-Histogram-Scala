@@ -6,7 +6,6 @@ trait Main extends App with IO with StarBuilder {
 
      val lines = scala.io.Source.stdin.getLines
      val words = lines.flatMap(_.split("\\W+"))
-
      val allWords = words.map((s: String) => countLength(s))
 
      val start = System.currentTimeMillis
@@ -16,5 +15,4 @@ trait Main extends App with IO with StarBuilder {
      printTree(wordTree)
      println("processing time: " + total + " ms")
   }
-
 }

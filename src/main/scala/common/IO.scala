@@ -1,13 +1,13 @@
 package cs372s15p1.scala.common
 
 /**
- * from processtree-scala
+ * skeleton from processtree-scala
+ *
+ * repeat stars on string from
+ * http://rosettacode.org/wiki/Repeat_a_string#Scala
  */
 
 import java.io.{BufferedWriter, OutputStreamWriter}
-
-import scala.collection.JavaConversions.enumerationAsScalaIterator
-import scala.math.max
 
 trait IO {
 
@@ -20,24 +20,15 @@ trait IO {
   implicit val stdout = new BufferedWriter(new OutputStreamWriter(System.out), IO_BUF_SIZE)
 
   def printTree
-  (wordTree: Map[Int, Int])
-  (implicit out: BufferedWriter)
-  : Unit = {
-    printTree(wordTree, 0, 0)(out)
-    out.flush()
-  }
-
-  def printTree
-  (wordTree: Map[Int, Int], pid: Int, indent: Int)
-  (implicit out: BufferedWriter)
-  : Unit = {
-    for (children <- wordTree.get(pid); (cpid, _, cmd) <- children) {
-      for (_ <- 1 to indent) out.append(' ')
-      out.append(cpid.toString)
-      out.append(": ")
-      out.append(cmd)
-      out.newLine()
-      printTree(wordTree, cpid, indent + 1)(out)
+  (wordTree: Map[Int, Int]) (implicit out: BufferedWriter): Unit = {
+    for(i: Int <- 1 to wordTree.keysIterator.max) {
+      stdout.write(i + " ")
+      if(wordTree.contains(i)){
+        stdout.append(wordTree(i) + " " + "*" * wordTree(i))
+      }
+      else stdout.append("0")
+      stdout.newLine()
     }
+    stdout.flush()
   }
 }
