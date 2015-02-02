@@ -1,6 +1,6 @@
 package cs372s15p1.scala.common
 
-trait Main extends App with IO {
+trait Main extends App with IO with StarBuilder {
 
    override def main(args: Array[String]): Unit = {
 
@@ -9,12 +9,12 @@ trait Main extends App with IO {
 
      val allWords = words.map((s: String) => countLength(s))
 
-/*    val start = System.currentTimeMillis
-    val processTree = buildTree(processes)
+    val start = System.currentTimeMillis
+    val wordTree = buildStars(allWords)
     val total = System.currentTimeMillis - start
 
-    printTree(processTree)
-    println("processing time: " + total + " ms")*/
+    printTree(wordTree)
+    println("processing time: " + total + " ms")
   }
 
 }

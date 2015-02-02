@@ -20,24 +20,24 @@ trait IO {
   implicit val stdout = new BufferedWriter(new OutputStreamWriter(System.out), IO_BUF_SIZE)
 
   def printTree
-  (processTree: Map[Int, Seq[(Int, Int, String)]])
+  (wordTree: Map[Int, Int])
   (implicit out: BufferedWriter)
   : Unit = {
-    printTree(processTree, 0, 0)(out)
+    printTree(wordTree, 0, 0)(out)
     out.flush()
   }
 
   def printTree
-  (processTree: Map[Int, Seq[(Int, Int, String)]], pid: Int, indent: Int)
+  (wordTree: Map[Int, Int], pid: Int, indent: Int)
   (implicit out: BufferedWriter)
   : Unit = {
-    for (children <- processTree.get(pid); (cpid, _, cmd) <- children) {
+    for (children <- wordTree.get(pid); (cpid, _, cmd) <- children) {
       for (_ <- 1 to indent) out.append(' ')
       out.append(cpid.toString)
       out.append(": ")
       out.append(cmd)
       out.newLine()
-      printTree(processTree, cpid, indent + 1)(out)
+      printTree(wordTree, cpid, indent + 1)(out)
     }
   }
 }
