@@ -1,28 +1,51 @@
 # Overview
 
-Very simple example including an App and a few tests (illustrating different testing styles).
+This program reads in an arbitrary number of words from the standard input and keeps track of the distribution of word lengths.
+After the end of the input is reached, the program prints a text-based histogram of the distribution of word lengths.
+From one up to the length of the longest word, it prints the number of words of that length as a number (possibly zero)
+and as a bar consisting of asterisks (possibly empty).
 
-# Running the app
+For example, if the input is
 
-    sbt run
-    sbt "runMain cs372s15p1.scala.mutable.Main"
-    sbt "runMain cs372s15p1.scala.immutable.Main"
+    hello hello
+        world goodbye hello
+      world good bye
 
-# Running the tests
+then the output is
+
+    1 0
+    2 0
+    3 1 *
+    4 1 *
+    5 5 *****
+    6 0
+    7 1 *
+
+If the input is empty, so is the output.
+
+# Testing
+
+To run the tests:
 
     sbt test
 
-# Determining test coverage
+To determine test coverage:
 
-    sbt scoverage:test
-	
-Now open this file in a web browser:
+    sbt coverage test
 
-    target/scala-2.10/scoverage-report/index.html
+Then open this file in a web browser:
 
-# Running a Scala console
+    target/scala-2.11/scoverage-report/index.html
 
-This allows you to explore the functionality of the classes in this
-project in a Scala REPL while letting sbt set the classpath for you.
+# Running the Program
 
-    sbt console
+To run the main methods:
+
+    sbt "runMain cs372s15p1.scala.mutable.Main"
+    sbt "runMain cs372s15p1.scala.immutable.Main"
+
+To run the main methods with the optional sample text file:
+
+    sbt "runMain cs372s15p1.scala.mutable.Main" < sample.txt
+    sbt "runMain cs372s15p1.scala.immutable.Main" < sample.txt
+
