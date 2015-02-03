@@ -12,6 +12,8 @@ import java.io.{BufferedWriter, OutputStreamWriter}
 trait IO {
 
   def countLength(word: String): Int = {
+    require(word.length > 0)
+    require(!word.contains(" "))
     word.length
   }
 
@@ -20,15 +22,17 @@ trait IO {
   implicit val stdout = new BufferedWriter(new OutputStreamWriter(System.out), IO_BUF_SIZE)
 
   def printTree
-  (wordTree: Map[Int, Int]) (implicit out: BufferedWriter): Unit = {
-    for(i: Int <- 1 to wordTree.keysIterator.max) {
-      stdout.write(i + " ")
-      if(wordTree.contains(i)){
-        stdout.append(wordTree(i) + " " + "*" * wordTree(i))
+  (wordTree: Map[Int, Int]) (implicit stdout: BufferedWriter): Unit = {
+    if(wordTree.nonEmpty) {
+      for (i: Int <- 1 to wordTree.keysIterator.max) {
+        stdout.write(i + " ")
+        if (wordTree.contains(i)) {
+          stdout.append(wordTree(i) + " " + "*" * wordTree(i))
+        }
+        else stdout.append("0")
+        stdout.newLine()
       }
-      else stdout.append("0")
-      stdout.newLine()
+      stdout.flush()
     }
-    stdout.flush()
   }
 }

@@ -12,6 +12,5 @@ object Main extends common.Main with Immutable
 trait Immutable extends common.StarBuilder {
   override def buildStars(allWords: Iterator[Int]): Map[Int, Int] = {
     allWords.toSeq.groupBy(identity).mapValues(_.length)
-    //returns an unsorted map
   }
 }

@@ -2,12 +2,11 @@ package cs372s15p1.scala
 package mutable
 
 /**
- * Created by Chrissy on 2/1/2015.
+ * skeleton from processtree-scala
  */
 object Main extends common.Main with Mutable
 
 trait Mutable extends common.StarBuilder {
-
   import scala.collection.mutable.HashMap
 
   override def buildStars(allWords: Iterator[Int]): Map[Int, Int] = {
@@ -17,9 +16,7 @@ trait Mutable extends common.StarBuilder {
       if (! treeMap.contains(wordLength)) {
         treeMap += (wordLength -> 1)
       }
-      else {
-        treeMap(wordLength) += 1
-      }
+      else treeMap(wordLength) += 1
     }
     treeMap.toMap
   }

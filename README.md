@@ -5,6 +5,8 @@ Very simple example including an App and a few tests (illustrating different tes
 # Running the app
 
     sbt run
+    sbt "runMain cs372s15p1.scala.mutable.Main"
+    sbt "runMain cs372s15p1.scala.immutable.Main"
 
 # Running the tests
 
