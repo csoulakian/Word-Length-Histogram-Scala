@@ -12,9 +12,10 @@ import java.io.{BufferedWriter, OutputStreamWriter}
 trait IO {
 
   def countLength(word: String): Int = {
-    require(word.length > 0)
-    require(!word.contains(" "))
-    word.length
+    if(word.contains(" ")){
+      0
+    }
+    else word.length
   }
 
   val IO_BUF_SIZE = 8192

@@ -10,18 +10,14 @@ class CountLengthSpec extends WordSpec with IO {
 
   "The word length counter" when {
     "given an empty word" should {
-      "reject this argument" in {
-        intercept[IllegalArgumentException] {
-          countLength("")
-        }
+      "return 0" in {
+        assert(countLength("") == 0)
       }
     }
 
     "given a word with a space in it" should {
-      "reject this argument" in {
-        intercept[IllegalArgumentException] {
-          countLength("hi there")
-        }
+      "return 0" in {
+        assert(countLength("hi there") == 0)
       }
     }
 
@@ -31,5 +27,4 @@ class CountLengthSpec extends WordSpec with IO {
       }
     }
   }
-
 }
