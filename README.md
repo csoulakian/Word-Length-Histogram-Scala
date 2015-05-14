@@ -1,3 +1,7 @@
+COMP 372 - Programming Languages
+Spring 2015
+Project 1 - based on [processtree-scala](https://github.com/LoyolaChicagoCode/processtree-scala)
+
 # Overview
 
 This program reads in an arbitrary number of words from the standard input and keeps track of the distribution of word lengths.

@@ -1,9 +1,6 @@
 package cs372s15p1.scala
 package common
 
-/**
- * Created by Chrissy on 2/2/2015.
- */
 object StarFixtures {
 
   val empty = Map.empty[Int, Int]

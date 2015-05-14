@@ -4,9 +4,6 @@ package common
 import java.io.{BufferedWriter, StringWriter}
 import org.scalatest.WordSpec
 
-/**
- * Created by Chrissy on 2/2/2015.
- */
 class PrintSpec extends WordSpec with IO{
 
   val EOL = System.lineSeparator

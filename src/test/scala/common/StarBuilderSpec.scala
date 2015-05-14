@@ -3,9 +3,6 @@ package common
 
 import org.scalatest.WordSpec
 
-/**
- * Created by Chrissy on 2/2/2015.
- */
 trait StarBuilderSpec extends WordSpec with StarBuilder{
 
   "The star builder" when {
