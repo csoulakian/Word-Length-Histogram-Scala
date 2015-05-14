@@ -1,8 +1,8 @@
-COMP 372 - Programming Languages
-Spring 2015
-Project 1 - based on [processtree-scala](https://github.com/LoyolaChicagoCode/processtree-scala)
+COMP 372 - Programming Languages  
+Spring 2015  
+Project 1 - based on [processtree-scala](https://github.com/LoyolaChicagoCode/processtree-scala)  
 
-# Overview
+#### Overview
 
 This program reads in an arbitrary number of words from the standard input and keeps track of the distribution of word lengths.
 After the end of the input is reached, the program prints a text-based histogram of the distribution of word lengths.
@@ -27,7 +27,7 @@ then the output is
 
 If the input is empty, so is the output.
 
-# Testing
+#### Testing
 
 To run the tests:
 
@@ -41,7 +41,7 @@ Then open this file in a web browser:
 
     target/scala-2.11/scoverage-report/index.html
 
-# Running the Program
+#### Running the Program
 
 To run the main methods:
 
