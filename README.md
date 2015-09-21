@@ -1,6 +1,10 @@
 COMP 372 - Programming Languages  
 Spring 2015  
-Project 1 - based on [processtree-scala](https://github.com/LoyolaChicagoCode/processtree-scala)  
+Project 1 - based on [processtree-scala](https://github.com/LoyolaChicagoCode/processtree-scala)
+- OO/imperative version, with mutable data structures
+- functional version, with immutable data structures
+- build tool: SBT
+- test framework: ScalaTest
 
 #### Overview
 
