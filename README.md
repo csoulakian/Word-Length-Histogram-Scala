@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/csoulakian/Word-Length-Histogram-Scala.svg)](https://travis-ci.org/csoulakian/Word-Length-Histogram-Scala)
+[![Coverage Status](https://coveralls.io/repos/csoulakian/Word-Length-Histogram-Scala/badge.svg?branch=master&service=github)](https://coveralls.io/github/csoulakian/Word-Length-Histogram-Scala?branch=master)
+
 COMP 372 - Programming Languages  
 Spring 2015  
 Project 1 - based on [processtree-scala](https://github.com/LoyolaChicagoCode/processtree-scala)
